@@ -6,42 +6,393 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MypageFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#ffffff"
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/mypage_appBar"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:background="#ffffff"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <TextView-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:layout_margin="12dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="My 계정"-->
+<!--                android:textSize="24sp"-->
+<!--                android:textColor="#525963"/>-->
+
+<!--            <ImageView-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:layout_margin="12dp"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:src="@drawable/ic_setting"/>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mypage_scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                app:layout_constraintStart_toStartOf="parent"
+
+            <View
+                android:id="@+id/view_part1"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My 계정"
-                android:textSize="24sp"
-                android:textColor="#525963"/>
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="#F1F2F6"/>
 
             <ImageView
+                android:id="@+id/iv_setting"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="12dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/icon_setting"/>
+                android:layout_margin="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_setting"/>
+
+            <TextView
+                android:id="@+id/tv_mypage_title"
+                app:layout_constraintTop_toBottomOf="@id/iv_setting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그인하고 여행 계획하기"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:textColor="#525963" />
+
+            <Button
+                android:id="@+id/btn_login_signup"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mypage_title"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="로그인/회원가입"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#287EF9"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+
+            <Button
+                android:id="@+id/btn_search"
+                app:layout_constraintTop_toBottomOf="@id/tv_mypage_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="예약 검색"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#287EF9"
+                app:strokeColor="#287EF9"
+                app:strokeWidth="0.5dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <View
+                android:id="@+id/view_part2"
+                app:layout_constraintTop_toBottomOf="@+id/view_part1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#F1F2F6"/>
+
+            <Button
+                android:id="@+id/btn_discount"
+                app:layout_constraintTop_toBottomOf="@+id/view_part1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:backgroundTint="#ffffff"
+                app:strokeWidth="0dp"
+                app:shapeAppearance="@style/ShapeAppearance.leftOneBorder"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <Button
+                android:id="@+id/btn_coin"
+                app:layout_constraintTop_toBottomOf="@id/view_part1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:layout_constraintWidth_percent="0.5"
+                android:backgroundTint="#ffffff"
+                app:strokeWidth="0dp"
+                app:shapeAppearance="@style/ShapeAppearance.rightOneBorder"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <View
+                android:id="@+id/view_centerBar"
+                app:layout_constraintTop_toTopOf="@+id/btn_discount"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_discount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0.5dp"
+                android:layout_height="50dp"
+                android:background="#525963"/>
+
+            <ImageView
+                android:id="@+id/iv_bar1"
+                app:layout_constraintTop_toTopOf="@id/view_centerBar"
+                app:layout_constraintStart_toStartOf="@+id/btn_discount"
+                app:layout_constraintEnd_toEndOf="@+id/btn_discount"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bar"/>
+
+            <TextView
+                android:id="@+id/tv_discount"
+                app:layout_constraintStart_toStartOf="@id/btn_discount"
+                app:layout_constraintEnd_toEndOf="@id/btn_discount"
+                app:layout_constraintBottom_toBottomOf="@+id/view_centerBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="할인코드"
+                android:textSize="18sp"
+                android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/iv_bar2"
+                app:layout_constraintTop_toTopOf="@id/view_centerBar"
+                app:layout_constraintStart_toStartOf="@id/btn_coin"
+                app:layout_constraintEnd_toEndOf="@+id/btn_coin"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bar"/>
+
+            <TextView
+                android:id="@+id/tv_coin"
+                app:layout_constraintStart_toStartOf="@id/btn_coin"
+                app:layout_constraintEnd_toEndOf="@id/btn_coin"
+                app:layout_constraintBottom_toBottomOf="@id/view_centerBar"
+                android:layout_marginBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="트립코인"
+                android:textSize="18sp"
+                android:textColor="#000000"/>
+
+            <View
+                android:id="@+id/view_line1"
+                app:layout_constraintTop_toBottomOf="@id/btn_discount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#F1F2F6"/>
+
+            <View
+                android:id="@+id/view_part3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_travelerInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_line1"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_like"
+                app:layout_constraintTop_toBottomOf="@+id/view_line1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_heart"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="즐겨찾기"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+            <Button
+                android:id="@+id/btn_cardInfo"
+                app:layout_constraintTop_toBottomOf="@+id/btn_like"
+                app:layout_constraintBottom_toTopOf="@+id/btn_travelerInfo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_card"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="저장카드 정보"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+            <Button
+                android:id="@+id/btn_travelerInfo"
+                app:layout_constraintTop_toBottomOf="@+id/btn_cardInfo"
+                app:layout_constraintBottom_toBottomOf="@+id/view_part3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_person"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="여행자 정보"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+            <View
+                android:id="@+id/view_line2"
+                app:layout_constraintTop_toBottomOf="@id/view_part3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#F1F2F6"/>
+
+            <View
+                android:id="@+id/view_part4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_line2"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_trip.comInfo"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_customerCenter"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="16dp"
+                android:text="고객센터"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                app:icon="@drawable/ic_headset"
+                app:iconPadding="10dp"
+                app:iconSize="18dp"
+                app:iconTint="@color/grayColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_part4" />
+
+            <Button
+                android:id="@+id/btn_trip.comInfo"
+                app:layout_constraintTop_toBottomOf="@id/btn_customerCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/view_part4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_info"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="트립닷컴 소개"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+            <View
+                android:id="@+id/view_line3"
+                app:layout_constraintTop_toBottomOf="@id/view_part4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="#F1F2F6"/>
+
+            <View
+                android:id="@+id/view_part5"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_line3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_trip.comReward"
+                app:layout_constraintTop_toTopOf="@id/view_part5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_trip_reward"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="트립닷컴 리워드"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+            <Button
+                android:id="@+id/btn_friend"
+                app:layout_constraintTop_toBottomOf="@id/btn_trip.comReward"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:icon="@drawable/ic_share"
+                app:iconTint="@color/grayColor"
+                app:iconSize="18dp"
+                app:iconPadding="10dp"
+                android:text="친구 초대하면 최대 10만원 할인"
+                android:textColor="@color/grayColor"
+                android:textSize="19sp"
+                android:textAlignment="viewStart"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-
-
-
-
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
