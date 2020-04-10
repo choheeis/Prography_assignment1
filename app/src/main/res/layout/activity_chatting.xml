@@ -54,6 +54,30 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_chatting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="문의사항을 입력하세요..."/>
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_send"
+        app:layout_constraintStart_toEndOf="@+id/et_chatting"
+        app:layout_constraintTop_toTopOf="@+id/et_chatting"
+        app:layout_constraintBottom_toBottomOf="@+id/et_chatting"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.2"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_send"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
