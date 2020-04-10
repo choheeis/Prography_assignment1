@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         replaceFragment(HomeFragment())
 
+        /** bottom navigation Fragment Replace */
         bottom_nav.setOnNavigationItemSelectedListener { item ->
             when(item.itemId){
                 R.id.item_home -> {
