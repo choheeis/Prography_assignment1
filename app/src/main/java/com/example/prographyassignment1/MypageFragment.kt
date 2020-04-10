@@ -26,7 +26,6 @@ class MypageFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         /** App Bar 투명도 설정 */
         mypage_appBar.alpha = 0f
         mypage_scrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
