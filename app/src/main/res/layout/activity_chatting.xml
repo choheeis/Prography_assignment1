@@ -4,6 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F2F6"
     tools:context=".ChattingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/chatting_appBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_backArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="12dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back_arrow"/>
+
+            <TextView
+                app:layout_constraintStart_toEndOf="@+id/iv_backArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="호텔 문의"
+                android:textSize="24sp"
+                android:textColor="#525963"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatting_rv"
+        app:layout_constraintTop_toBottomOf="@+id/chatting_appBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

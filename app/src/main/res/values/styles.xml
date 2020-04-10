@@ -17,7 +17,7 @@
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
-    <!-- My page 오른쪽쪽 상단만 round인 버튼 Style -->
+    <!-- My page 오른쪽 상단만 round인 버튼 Style -->
     <style name="ShapeAppearance.rightOneBorder" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamilyTopRight">rounded</item>
         <item name="cornerSizeTopRight">20dp</item>
