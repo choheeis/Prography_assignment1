@@ -1,16 +1,13 @@
 package com.example.prographyassignment1
 
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.NestedScrollView
-import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_mypage.*
 
 
@@ -26,6 +23,7 @@ class MypageFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         /** App Bar 투명도 설정 */
         mypage_appBar.alpha = 0f
         mypage_scrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
